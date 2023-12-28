@@ -13,24 +13,27 @@ The project is organized as follows:
 
 ## Usage
 
-1. **Clone the Repository:**
+1. ### Clone the Repository:
 
    ```bash
    git clone https://github.com/shajon1211045/ETL_with_Python.git
+   ```
+   ```
    cd ETL_with_Python
+   ```
 
-2. **Run the ETL Script**
+2. ### Run the ETL Script
    ```bash
    python ETL.py
 
-3.**Check the Output:**
+3. ### Check the Output
 - Transformed data is displayed on the console.  
 - Check the log file `log_file.txt` for progress and timestamped messages. 
 + If data is transformed successfully and not empty, the transformed data is saved to transformed_data.csv.  
 
-**Dependencies**  
+## Dependencies  
 `Python 3.x`    
 `pandas library`  
 
-**Author**
+## Author
 ``Md Zahidul Islam``
