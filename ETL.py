@@ -16,12 +16,18 @@ def extract_from_csv(file_to_process):
 
 def extract_from_json(file_to_process):
     dataframe = pd.read_json(file_to_process, lines=True)
+    # Checking if the JSON file is empty to handle such cases.
+    if dataframe.empty:
+        return pd.DataFrame(columns=["car_model", "year_of_manufacture", "price", "fuel"])
     return dataframe
 
 def extract_from_xml(file_to_process):
     dataframe = pd.DataFrame(columns=["car_model", "year_of_manufacture", "price", "fuel"])
     tree = ET.parse(file_to_process)
     root = tree.getroot()
+    # Checking if the XML file is empty to handle such cases.
+    if len(root) == 0:
+        return pd.DataFrame(columns=["car_model", "year_of_manufacture", "price", "fuel"])
     for car in root:
         car_model = car.find("car_model").text
         year_of_manufacture = car.find("year_of_manufacture").text
