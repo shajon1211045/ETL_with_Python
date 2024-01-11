@@ -8,7 +8,7 @@ target_file = "transformed_data.csv"
 
 def extract_from_csv(file_to_process):
     dataframe = pd.read_csv(file_to_process)
-
+    # Checking if the csv file is empty to handle such cases.
     if dataframe.empty:
         return pd.DataFrame(columns=["car_model", "year_of_manufacture", "price", "fuel"])
 
